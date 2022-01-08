@@ -1,10 +1,12 @@
 import express from 'express'
-const app = express();
 import dotenv from 'dotenv'
-dotenv.config()
-const username = process.env.USERNAME;
-const token = process.env.TOKEN;
 import fetch from "node-fetch";
+
+const app = express();
+dotenv.config()
+
+const token = process.env.TOKEN;
+
 const baseUrl = 'https://api.github.com/search/issues?q=repo:bitcoin/bitcoin+is:pr+';
 var results = {}
 
@@ -23,21 +25,22 @@ const state = ["open", "closed"]
 async function fetchResults() {
     
     for(let i=0; i<labels.length; i++) {
-        results[labels[i]+"_open"] = await fetchData(labels[i], state[0], username, token)
-        results[labels[i]+"_closed"] = await fetchData(labels[i], state[1], username, token)
+        results[labels[i]+"_open"] = await fetchData(labels[i], state[0])
+        results[labels[i]+"_closed"] = await fetchData(labels[i], state[1])
     }
     console.log(results)
     return results
 }
 
-async function fetchData(label, state, username, token) {
+async function fetchData(label, state) {
     var fetchedData = await fetch(`${baseUrl}state:${state}+label:${label}`, {
         headers: {
-            'Authorization': 'Basic '  + (username + ":" + token)
+            'Authorization': 'token '  + token
         }
     })
     var formattedData = await fetchedData.json();
     var formattedData2 = await formattedData.total_count;
+
     return await formattedData2;
 }
 

@@ -5,13 +5,12 @@ import fetch from "node-fetch";
 const app = express();
 dotenv.config()
 
-const token = process.env.TOKEN;
-
-const baseUrl = 'https://api.github.com/search/issues?q=repo:bitcoin/bitcoin+is:pr+';
-var results = {}
-
 app.use(express.static("public"));
 app.set("view engine", "ejs");
+
+const token = process.env.TOKEN;
+const baseUrl = 'https://api.github.com/search/issues?q=repo:bitcoin/bitcoin+is:pr+';
+var results = {}
 
 app.get("/", async function(req,res){
     await fetchResults()
@@ -43,6 +42,5 @@ async function fetchData(label, state) {
 
     return await formattedData2;
 }
-
 
 app.listen((process.env.PORT || 8080), () => console.log("server is listening"));

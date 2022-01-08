@@ -1,105 +1,100 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Bitcoin PR Stats</title>
-    <link rel="stylesheet" href="index.css">
-  </head>
-  <body>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Bitcoin PR Stats</title>
+        <link rel="stylesheet" href="index.css">
+    </head>
+    <body>
+        <div class="header__box">
+            <h1 class="header__heading-main-lev">Bitcoin PR stats</h1>
 
+            <div class="flex-box">
+                <div class="label">
+                    <h2>Wallet</h2>
+                    <div class="pr">
+                        <div>PR open: </div>
+                        <div id="wallet-open"> <%=results.Wallet_open%></div>
+                    </div>
+                    <div class="pr">
+                        <div>PR closed: </div>
+                        <div id="wallet-closed"> <%=results.Wallet_closed%></div>
+                    </div>
+                </div>
 
-    <div class="header__box">
-        <h1 class="header__heading-main-lev">Bitcoin PR stats</h1>
+                <div class="label">
+                    <h2>Mining</h2>
+                    <div class="pr">
+                        <div>PR open: </div>
+                        <div id="mining-open"> <%=results.Mining_open%></div>
+                    </div>
+                    <div class="pr">
+                        <div>PR closed: </div>
+                        <div id="mining-closed"> <%=results.Mining_closed%></div>
+                    </div>
+                </div>
+                
+                <div class="label">
+                    <h2>Feature</h2>
+                    <div class="pr">
+                        <div>PR open: </div>
+                        <div id="feature-open"> <%=results.Feature_open%></div>
+                    </div>
+                    <div class="pr">
+                        <div>PR closed: </div>
+                        <div id="feature-closed"> <%=results.Feature_closed%></div>
+                    </div>
+                </div>
 
-        <div class="flex-box">
-            <div class="label">
-                <h2>Wallet</h2>
-                <div class="pr">
-                    <div>PR open: </div>
-                    <div id="wallet-open"> <%=results.Wallet_open%></div>
+                <div class="label">
+                    <h2>GUI</h2>
+                    <div class="pr">
+                        <div>PR open: </div>
+                        <div id="gui-open"><%=results.GUI_open%></div>
+                    </div>
+                    <div class="pr">
+                        <div>PR closed: </div>
+                        <div id="gui-closed"><%=results.GUI_closed%></div>
+                    </div>
                 </div>
-                <div class="pr">
-                    <div>PR closed: </div>
-                    <div id="wallet-closed"> <%=results.Wallet_closed%></div>
-                </div>
-            </div>
 
-            <div class="label">
-                <h2>Mining</h2>
-                <div class="pr">
-                    <div>PR open: </div>
-                    <div id="mining-open"> <%=results.Mining_open%></div>
+                <div class="label">
+                    <h2>Mempool</h2>
+                    <div class="pr">
+                        <div>PR open: </div>
+                        <div id="mempool-open"> <%=results.Mempool_open%></div>
+                    </div>
+                    <div class="pr">
+                        <div>PR closed: </div>
+                        <div id="mempool-closed"> <%=results.Mempool_closed%></div>
+                    </div>
                 </div>
-                <div class="pr">
-                    <div>PR closed: </div>
-                    <div id="mining-closed"> <%=results.Mining_closed%></div>
-                </div>
-            </div>
-            
-            <div class="label">
-                <h2>Feature</h2>
-                <div class="pr">
-                    <div>PR open: </div>
-                    <div id="feature-open"> <%=results.Feature_open%></div>
-                </div>
-                <div class="pr">
-                    <div>PR closed: </div>
-                    <div id="feature-closed"> <%=results.Feature_closed%></div>
-                </div>
-            </div>
 
-            <div class="label">
-                <h2>GUI</h2>
-                <div class="pr">
-                    <div>PR open: </div>
-                    <div id="gui-open"><%=results.GUI_open%></div>
+                <div class="label">
+                    <h2>P2P</h2>
+                    <div class="pr">
+                        <div>PR open: </div>
+                        <div id="p2p-open"> <%=results.P2P_open%></div>
+                    </div>
+                    <div class="pr">
+                        <div>PR closed: </div>
+                        <div id="p2p-closed"> <%=results.P2P_closed%></div>
+                    </div>
                 </div>
-                <div class="pr">
-                    <div>PR closed: </div>
-                    <div id="gui-closed"><%=results.GUI_closed%></div>
-                </div>
-            </div>
-
-            <div class="label">
-                <h2>Mempool</h2>
-                <div class="pr">
-                    <div>PR open: </div>
-                    <div id="mempool-open"> <%=results.Mempool_open%></div>
-                </div>
-                <div class="pr">
-                    <div>PR closed: </div>
-                    <div id="mempool-closed"> <%=results.Mempool_closed%></div>
-                </div>
-            </div>
-
-            <div class="label">
-                <h2>P2P</h2>
-                <div class="pr">
-                    <div>PR open: </div>
-                    <div id="p2p-open"> <%=results.P2P_open%></div>
-                </div>
-                <div class="pr">
-                    <div>PR closed: </div>
-                    <div id="p2p-closed"> <%=results.P2P_closed%></div>
-                </div>
-            </div>
-            <div class="label">
-                <h2>Tests</h2>
-                <div class="pr">
-                    <div>PR open:</div>
-                    <div id="tests-open"> <%=results.Tests_open%></div>
-                </div>
-                <div class="pr">
-                    <div>PR closed: </div>
-                    <div id="tests-closed"> <%=results.Tests_closed%></div>
+                <div class="label">
+                    <h2>Tests</h2>
+                    <div class="pr">
+                        <div>PR open:</div>
+                        <div id="tests-open"> <%=results.Tests_open%></div>
+                    </div>
+                    <div class="pr">
+                        <div>PR closed: </div>
+                        <div id="tests-closed"> <%=results.Tests_closed%></div>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-
-
-
-</body>
+    </body>
 </html>

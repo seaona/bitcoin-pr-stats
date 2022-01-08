@@ -24,10 +24,8 @@ window.onload = async function () {
 
 }
 
-async function fetchDataLabel(label, state) {
+async function fetchDataLabel(label, state, username, token) {
     let baseUrl = 'https://api.github.com/search/issues?q=repo:bitcoin/bitcoin+is:pr+';
-    let username = process.env.USERNAME;
-    let token = process.env.TOKEN;
 
     let headers = new Headers();
     headers.set('Authorization', 'Basic ' + btoa(username + ":" + token));
